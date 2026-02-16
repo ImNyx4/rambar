@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F00B9AE96FFEC90DAC930D5 /* ProcessMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA5D6D0D8FDA996F61E32EC /* ProcessMemory.swift */; };
 		417B78D7B4538070739F4124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716022BBF16BE9CF5B1EB67F /* Assets.xcassets */; };
+		4A4117A7B992E563F94D97CE /* SystemMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */; };
+		5907B73901934D127CF9363D /* SystemMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0A342BF9B99AF350ADB9D /* SystemMemory.swift */; };
+		62AD6DE8242F4C381EFEFAED /* ByteFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B155C3E44ED23C165543 /* ByteFormatting.swift */; };
 		638EE667843FA3C8DD1B67B8 /* RamBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0501ABDC464D18301967770 /* RamBarApp.swift */; };
+		DC1FDF4CDBBFED2D233D1B2D /* ByteFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1501C848DE9A1D17B5F282D3 /* ByteFormattingTests.swift */; };
 		F0E9F6EE6E9601CFE25EBD2E /* RamBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDDCF1A88CA0FE275691980 /* RamBarTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,9 +28,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0169B155C3E44ED23C165543 /* ByteFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteFormatting.swift; sourceTree = "<group>"; };
+		0AD0A342BF9B99AF350ADB9D /* SystemMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMemory.swift; sourceTree = "<group>"; };
+		1501C848DE9A1D17B5F282D3 /* ByteFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteFormattingTests.swift; sourceTree = "<group>"; };
 		16CBE779F022066C2862FFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A652E8A145FB0C5D1A324D5 /* RamBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA5D6D0D8FDA996F61E32EC /* ProcessMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessMemory.swift; sourceTree = "<group>"; };
 		716022BBF16BE9CF5B1EB67F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMemoryTests.swift; sourceTree = "<group>"; };
 		7BDDCF1A88CA0FE275691980 /* RamBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamBarTests.swift; sourceTree = "<group>"; };
 		DF711C5A5AD1BFBE20E78E4D /* RamBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0501ABDC464D18301967770 /* RamBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamBarApp.swift; sourceTree = "<group>"; };
@@ -35,7 +45,9 @@
 		5DE346EB74BEA1D3F8A0032B /* RamBarTests */ = {
 			isa = PBXGroup;
 			children = (
+				1501C848DE9A1D17B5F282D3 /* ByteFormattingTests.swift */,
 				7BDDCF1A88CA0FE275691980 /* RamBarTests.swift */,
+				735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */,
 			);
 			path = RamBarTests;
 			sourceTree = "<group>";
@@ -47,6 +59,23 @@
 				5DE346EB74BEA1D3F8A0032B /* RamBarTests */,
 				D433E6A669F77F1E24ADBB2B /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		A22FFCEFAA8080BC5D6D7059 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CA5D6D0D8FDA996F61E32EC /* ProcessMemory.swift */,
+				0AD0A342BF9B99AF350ADB9D /* SystemMemory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B0186464B300C80B8C14A701 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0169B155C3E44ED23C165543 /* ByteFormatting.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D433E6A669F77F1E24ADBB2B /* Products */ = {
@@ -64,6 +93,8 @@
 				716022BBF16BE9CF5B1EB67F /* Assets.xcassets */,
 				16CBE779F022066C2862FFB7 /* Info.plist */,
 				E0501ABDC464D18301967770 /* RamBarApp.swift */,
+				B0186464B300C80B8C14A701 /* Helpers */,
+				A22FFCEFAA8080BC5D6D7059 /* Models */,
 			);
 			path = RamBar;
 			sourceTree = "<group>";
@@ -152,7 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1FDF4CDBBFED2D233D1B2D /* ByteFormattingTests.swift in Sources */,
 				F0E9F6EE6E9601CFE25EBD2E /* RamBarTests.swift in Sources */,
+				4A4117A7B992E563F94D97CE /* SystemMemoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62AD6DE8242F4C381EFEFAED /* ByteFormatting.swift in Sources */,
+				0F00B9AE96FFEC90DAC930D5 /* ProcessMemory.swift in Sources */,
 				638EE667843FA3C8DD1B67B8 /* RamBarApp.swift in Sources */,
+				5907B73901934D127CF9363D /* SystemMemory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

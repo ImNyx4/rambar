@@ -66,11 +66,12 @@ class MemoryMonitor: ObservableObject {
         let pageSize = UInt64(vm_kernel_page_size)
         let total = ProcessInfo.processInfo.physicalMemory
 
-        let active = UInt64(stats.active_count) * pageSize
-        let wired = UInt64(stats.wire_count) * pageSize
-        let compressed = UInt64(stats.compressor_page_count) * pageSize
-        let used = active + wired + compressed
-        let free = total > used ? total - used : 0
+        let free = UInt64(stats.free_count) * pageSize
+        let inactive = UInt64(stats.inactive_count) * pageSize
+        let speculative = UInt64(stats.speculative_count) * pageSize
+        let purgeable = UInt64(stats.purgeable_count) * pageSize
+        let available = free + inactive + speculative + purgeable
+        let used = total > available ? total - available : 0
 
         return SystemMemory(total: total, used: used, free: free, pressure: currentPressure)
     }
@@ -113,13 +114,16 @@ class MemoryMonitor: ObservableObject {
             let pid = pids[i]
             guard pid > 0 else { continue }
 
-            var info = proc_taskinfo()
-            let size = Int32(MemoryLayout<proc_taskinfo>.size)
-            let ret = proc_pidinfo(pid, PROC_PIDTASKINFO, 0, &info, size)
-            guard ret == size else { continue }
+            var rusage = rusage_info_v4()
+            let ret = withUnsafeMutablePointer(to: &rusage) {
+                $0.withMemoryRebound(to: rusage_info_t?.self, capacity: 1) {
+                    proc_pid_rusage(pid, RUSAGE_INFO_V4, $0)
+                }
+            }
+            guard ret == 0 else { continue }
 
-            let rss = UInt64(info.pti_resident_size)
-            guard rss > 10_000_000 else { continue }
+            let footprint = rusage.ri_phys_footprint
+            guard footprint > 10_000_000 else { continue }
 
             let name: String
             let icon: NSImage?
@@ -135,7 +139,7 @@ class MemoryMonitor: ObservableObject {
             }
 
             guard !name.isEmpty else { continue }
-            results.append(ProcessMemory(id: pid, name: name, memory: rss, icon: icon))
+            results.append(ProcessMemory(id: pid, name: name, memory: footprint, icon: icon))
         }
 
         let grouped = groupHelperProcesses(results)

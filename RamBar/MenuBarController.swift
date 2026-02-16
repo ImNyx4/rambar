@@ -35,6 +35,12 @@ class MenuBarController {
                 self?.statusItem.button?.title = "\(memory.usedPercentage)%"
             }
 
+        // Apply stored refresh interval preference before starting
+        let storedInterval = UserDefaults.standard.double(forKey: "refreshInterval")
+        if storedInterval > 0 {
+            monitor.refreshInterval = storedInterval
+        }
+
         monitor.start()
     }
 

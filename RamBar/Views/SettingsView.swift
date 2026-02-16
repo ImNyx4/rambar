@@ -52,7 +52,7 @@ struct SettingsView: View {
         .padding(16)
         .frame(width: 300, height: 420)
         .onAppear {
-            // Sync monitor interval from stored preference
+            // Sync monitor interval from stored preference (also done at startup in MenuBarController)
             monitor.refreshInterval = refreshInterval
         }
     }

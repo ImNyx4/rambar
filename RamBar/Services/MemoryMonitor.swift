@@ -9,6 +9,7 @@ class MemoryMonitor: ObservableObject {
     private var timer: Timer?
     private var pressureSource: DispatchSourceMemoryPressure?
     private var currentPressure: MemoryPressure = .normal
+    private let hostPort = mach_host_self()
 
     deinit {
         stop()
@@ -56,7 +57,7 @@ class MemoryMonitor: ObservableObject {
 
         let result = withUnsafeMutablePointer(to: &stats) {
             $0.withMemoryRebound(to: integer_t.self, capacity: Int(count)) {
-                host_statistics64(mach_host_self(), HOST_VM_INFO64, $0, &count)
+                host_statistics64(self.hostPort, HOST_VM_INFO64, $0, &count)
             }
         }
 

@@ -21,7 +21,6 @@
 		B69B1927699F2152678B73A6 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CEFED1632CF3A626ED501 /* PopoverView.swift */; };
 		DC1FDF4CDBBFED2D233D1B2D /* ByteFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1501C848DE9A1D17B5F282D3 /* ByteFormattingTests.swift */; };
 		DD670568429DDEB19B2FDC40 /* ProcessListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0481952B7D8EDFE6FFDEF4 /* ProcessListView.swift */; };
-		F0E9F6EE6E9601CFE25EBD2E /* RamBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDDCF1A88CA0FE275691980 /* RamBarTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		51AC19A3080373C447B02CB3 /* MemoryMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMonitorTests.swift; sourceTree = "<group>"; };
 		716022BBF16BE9CF5B1EB67F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMemoryTests.swift; sourceTree = "<group>"; };
-		7BDDCF1A88CA0FE275691980 /* RamBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamBarTests.swift; sourceTree = "<group>"; };
 		A7F3789407A5C84E90E59B8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF711C5A5AD1BFBE20E78E4D /* RamBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0501ABDC464D18301967770 /* RamBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamBarApp.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 			children = (
 				1501C848DE9A1D17B5F282D3 /* ByteFormattingTests.swift */,
 				51AC19A3080373C447B02CB3 /* MemoryMonitorTests.swift */,
-				7BDDCF1A88CA0FE275691980 /* RamBarTests.swift */,
 				735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */,
 			);
 			path = RamBarTests;
@@ -222,7 +219,6 @@
 			files = (
 				DC1FDF4CDBBFED2D233D1B2D /* ByteFormattingTests.swift in Sources */,
 				A704FF989523AF6F233DC7DF /* MemoryMonitorTests.swift in Sources */,
-				F0E9F6EE6E9601CFE25EBD2E /* RamBarTests.swift in Sources */,
 				4A4117A7B992E563F94D97CE /* SystemMemoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

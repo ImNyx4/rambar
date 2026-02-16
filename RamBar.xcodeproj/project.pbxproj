@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		0A326307A9954F3E6AB0B643 /* MemoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9547D0B9BE0465D8027B9C /* MemoryMonitor.swift */; };
 		0F00B9AE96FFEC90DAC930D5 /* ProcessMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA5D6D0D8FDA996F61E32EC /* ProcessMemory.swift */; };
+		192C0D930EFC2D83F90899AD /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4CB2E40410E2E601A226B /* MenuBarController.swift */; };
 		417B78D7B4538070739F4124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716022BBF16BE9CF5B1EB67F /* Assets.xcassets */; };
 		4A4117A7B992E563F94D97CE /* SystemMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */; };
 		5907B73901934D127CF9363D /* SystemMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0A342BF9B99AF350ADB9D /* SystemMemory.swift */; };
 		62AD6DE8242F4C381EFEFAED /* ByteFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B155C3E44ED23C165543 /* ByteFormatting.swift */; };
 		638EE667843FA3C8DD1B67B8 /* RamBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0501ABDC464D18301967770 /* RamBarApp.swift */; };
 		A704FF989523AF6F233DC7DF /* MemoryMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AC19A3080373C447B02CB3 /* MemoryMonitorTests.swift */; };
+		ACF11CADA7F39A890574F4C5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F3789407A5C84E90E59B8B /* SettingsView.swift */; };
+		ADF00F5A82E8C0EEBE1D3D59 /* MemoryGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFD8B42786B78AEA6A9E41 /* MemoryGaugeView.swift */; };
+		B69B1927699F2152678B73A6 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CEFED1632CF3A626ED501 /* PopoverView.swift */; };
 		DC1FDF4CDBBFED2D233D1B2D /* ByteFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1501C848DE9A1D17B5F282D3 /* ByteFormattingTests.swift */; };
+		DD670568429DDEB19B2FDC40 /* ProcessListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0481952B7D8EDFE6FFDEF4 /* ProcessListView.swift */; };
 		F0E9F6EE6E9601CFE25EBD2E /* RamBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDDCF1A88CA0FE275691980 /* RamBarTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,18 +36,23 @@
 
 /* Begin PBXFileReference section */
 		0169B155C3E44ED23C165543 /* ByteFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteFormatting.swift; sourceTree = "<group>"; };
+		04D4CB2E40410E2E601A226B /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		0AD0A342BF9B99AF350ADB9D /* SystemMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMemory.swift; sourceTree = "<group>"; };
 		1501C848DE9A1D17B5F282D3 /* ByteFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteFormattingTests.swift; sourceTree = "<group>"; };
 		16CBE779F022066C2862FFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1C9547D0B9BE0465D8027B9C /* MemoryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMonitor.swift; sourceTree = "<group>"; };
+		2F0481952B7D8EDFE6FFDEF4 /* ProcessListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessListView.swift; sourceTree = "<group>"; };
 		3A652E8A145FB0C5D1A324D5 /* RamBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA5D6D0D8FDA996F61E32EC /* ProcessMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessMemory.swift; sourceTree = "<group>"; };
+		50EFD8B42786B78AEA6A9E41 /* MemoryGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGaugeView.swift; sourceTree = "<group>"; };
 		51AC19A3080373C447B02CB3 /* MemoryMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMonitorTests.swift; sourceTree = "<group>"; };
 		716022BBF16BE9CF5B1EB67F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMemoryTests.swift; sourceTree = "<group>"; };
 		7BDDCF1A88CA0FE275691980 /* RamBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamBarTests.swift; sourceTree = "<group>"; };
+		A7F3789407A5C84E90E59B8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF711C5A5AD1BFBE20E78E4D /* RamBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0501ABDC464D18301967770 /* RamBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamBarApp.swift; sourceTree = "<group>"; };
+		F76CEFED1632CF3A626ED501 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -63,6 +73,17 @@
 				735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */,
 			);
 			path = RamBarTests;
+			sourceTree = "<group>";
+		};
+		75544C41738FD2AAEB8A1064 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50EFD8B42786B78AEA6A9E41 /* MemoryGaugeView.swift */,
+				F76CEFED1632CF3A626ED501 /* PopoverView.swift */,
+				2F0481952B7D8EDFE6FFDEF4 /* ProcessListView.swift */,
+				A7F3789407A5C84E90E59B8B /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		79EEF82090B59CB522DE3F80 = {
@@ -105,10 +126,12 @@
 			children = (
 				716022BBF16BE9CF5B1EB67F /* Assets.xcassets */,
 				16CBE779F022066C2862FFB7 /* Info.plist */,
+				04D4CB2E40410E2E601A226B /* MenuBarController.swift */,
 				E0501ABDC464D18301967770 /* RamBarApp.swift */,
 				B0186464B300C80B8C14A701 /* Helpers */,
 				A22FFCEFAA8080BC5D6D7059 /* Models */,
 				3BB9311C2B77072F28E7F2A5 /* Services */,
+				75544C41738FD2AAEB8A1064 /* Views */,
 			);
 			path = RamBar;
 			sourceTree = "<group>";
@@ -209,9 +232,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				62AD6DE8242F4C381EFEFAED /* ByteFormatting.swift in Sources */,
+				ADF00F5A82E8C0EEBE1D3D59 /* MemoryGaugeView.swift in Sources */,
 				0A326307A9954F3E6AB0B643 /* MemoryMonitor.swift in Sources */,
+				192C0D930EFC2D83F90899AD /* MenuBarController.swift in Sources */,
+				B69B1927699F2152678B73A6 /* PopoverView.swift in Sources */,
+				DD670568429DDEB19B2FDC40 /* ProcessListView.swift in Sources */,
 				0F00B9AE96FFEC90DAC930D5 /* ProcessMemory.swift in Sources */,
 				638EE667843FA3C8DD1B67B8 /* RamBarApp.swift in Sources */,
+				ACF11CADA7F39A890574F4C5 /* SettingsView.swift in Sources */,
 				5907B73901934D127CF9363D /* SystemMemory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

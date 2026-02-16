@@ -18,9 +18,8 @@ class MenuBarController {
         popover.behavior = .transient
         popover.animates = true
 
-        // Placeholder view — will be replaced in Task 7
         popover.contentViewController = NSHostingController(
-            rootView: Text("RamBar").frame(width: 300, height: 420)
+            rootView: PopoverView(monitor: monitor)
         )
 
         if let button = statusItem.button {

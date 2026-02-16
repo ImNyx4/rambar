@@ -73,7 +73,19 @@ class MemoryMonitor: ObservableObject {
         let available = free + inactive + speculative + purgeable
         let used = total > available ? total - available : 0
 
-        return SystemMemory(total: total, used: used, free: free, pressure: currentPressure)
+        let pressure: MemoryPressure
+        if currentPressure == .critical {
+            pressure = .critical
+        } else if currentPressure == .warning {
+            pressure = .warning
+        } else {
+            let pct = total > 0 ? Int((Double(used) / Double(total)) * 100) : 0
+            if pct > 90 { pressure = .critical }
+            else if pct > 75 { pressure = .warning }
+            else { pressure = .normal }
+        }
+
+        return SystemMemory(total: total, used: used, free: free, pressure: pressure)
     }
 
     // MARK: - Memory Pressure

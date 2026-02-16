@@ -12,7 +12,9 @@ struct RamBarApp: App {
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+    var menuBarController: MenuBarController?
+
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Menu bar controller will be set up in a later task
+        menuBarController = MenuBarController()
     }
 }

@@ -66,12 +66,13 @@ class MemoryMonitor: ObservableObject {
         let pageSize = UInt64(vm_kernel_page_size)
         let total = ProcessInfo.processInfo.physicalMemory
 
-        let free = UInt64(stats.free_count) * pageSize
+        let freePages = UInt64(stats.free_count) * pageSize
         let inactive = UInt64(stats.inactive_count) * pageSize
         let speculative = UInt64(stats.speculative_count) * pageSize
         let purgeable = UInt64(stats.purgeable_count) * pageSize
-        let available = free + inactive + speculative + purgeable
+        let available = freePages + inactive + speculative + purgeable
         let used = total > available ? total - available : 0
+        let free = total - used
 
         let pressure: MemoryPressure
         if currentPressure == .critical {

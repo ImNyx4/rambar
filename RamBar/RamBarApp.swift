@@ -16,5 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         menuBarController = MenuBarController()
+        UpdateChecker.checkForUpdates()
     }
 }

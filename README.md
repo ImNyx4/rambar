@@ -22,9 +22,11 @@ A lightweight macOS menu bar app that shows real-time RAM usage with per-app bre
 
 ## Install
 
-1. Download `RamBar-v1.0.0.zip` from [Releases](https://github.com/ImNyx4/rambar/releases/latest)
-2. Unzip and move `RamBar.app` to Applications
+1. Download `RamBar.dmg` from [Releases](https://github.com/ImNyx4/rambar/releases/latest)
+2. Open the DMG and drag `RamBar.app` to Applications
 3. Right-click > Open (first launch only, to bypass Gatekeeper)
+
+RamBar checks for updates automatically on launch.
 
 ## Build from Source
 

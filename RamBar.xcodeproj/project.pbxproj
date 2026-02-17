@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08440606A8431DF1F713AD6A /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA05E9BB613F4DB9D09DE7B9 /* UpdateChecker.swift */; };
 		0A326307A9954F3E6AB0B643 /* MemoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9547D0B9BE0465D8027B9C /* MemoryMonitor.swift */; };
 		0F00B9AE96FFEC90DAC930D5 /* ProcessMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA5D6D0D8FDA996F61E32EC /* ProcessMemory.swift */; };
 		192C0D930EFC2D83F90899AD /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4CB2E40410E2E601A226B /* MenuBarController.swift */; };
@@ -48,6 +49,7 @@
 		716022BBF16BE9CF5B1EB67F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735BF326F9B76AB627D62C59 /* SystemMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMemoryTests.swift; sourceTree = "<group>"; };
 		A7F3789407A5C84E90E59B8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA05E9BB613F4DB9D09DE7B9 /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
 		DF711C5A5AD1BFBE20E78E4D /* RamBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0501ABDC464D18301967770 /* RamBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamBarApp.swift; sourceTree = "<group>"; };
 		F76CEFED1632CF3A626ED501 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				1C9547D0B9BE0465D8027B9C /* MemoryMonitor.swift */,
+				AA05E9BB613F4DB9D09DE7B9 /* UpdateChecker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				638EE667843FA3C8DD1B67B8 /* RamBarApp.swift in Sources */,
 				ACF11CADA7F39A890574F4C5 /* SettingsView.swift in Sources */,
 				5907B73901934D127CF9363D /* SystemMemory.swift in Sources */,
+				08440606A8431DF1F713AD6A /* UpdateChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,14 +318,14 @@
 				CODE_SIGNING_REQUIRED = NO;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				INFOPLIST_FILE = RamBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sihan.rambar;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;
@@ -438,14 +442,14 @@
 				CODE_SIGNING_REQUIRED = NO;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				INFOPLIST_FILE = RamBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sihan.rambar;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;

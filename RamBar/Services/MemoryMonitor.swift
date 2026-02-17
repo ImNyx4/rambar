@@ -150,7 +150,13 @@ class MemoryMonitor: ObservableObject {
                 var nameBuffer = [CChar](repeating: 0, count: 256)
                 proc_name(pid, &nameBuffer, 256)
                 name = String(cString: nameBuffer)
-                icon = nil
+                var pathBuffer = [UInt8](repeating: 0, count: 4096)
+                let pathLen = proc_pidpath(pid, &pathBuffer, UInt32(pathBuffer.count))
+                if pathLen > 0 {
+                    icon = NSWorkspace.shared.icon(forFile: String(cString: pathBuffer))
+                } else {
+                    icon = nil
+                }
             }
 
             guard !name.isEmpty else { continue }

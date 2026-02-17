@@ -67,10 +67,12 @@ class MemoryMonitor: ObservableObject {
         let total = ProcessInfo.processInfo.physicalMemory
 
         let freePages = UInt64(stats.free_count) * pageSize
-        let inactive = UInt64(stats.inactive_count) * pageSize
         let speculative = UInt64(stats.speculative_count) * pageSize
+        let external = UInt64(stats.external_page_count) * pageSize
         let purgeable = UInt64(stats.purgeable_count) * pageSize
-        let available = freePages + inactive + speculative + purgeable
+        // Match Activity Monitor: cached = file-backed (external) + purgeable
+        let cached = external + purgeable
+        let available = freePages + speculative + cached
         let used = total > available ? total - available : 0
         let free = total - used
 

@@ -6,6 +6,7 @@ struct SettingsView: View {
     @Binding var showSettings: Bool
     @AppStorage("refreshInterval") private var refreshInterval: Double = 3.0
     @AppStorage("launchAtLogin") private var launchAtLogin: Bool = false
+    @AppStorage("autoUpdateEnabled") private var autoUpdateEnabled: Bool = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -47,7 +48,30 @@ struct SettingsView: View {
                 }
             }
 
+            // Updates
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Updates")
+                    .font(.system(size: 12, weight: .medium))
+
+                Toggle("Check for updates on launch", isOn: $autoUpdateEnabled)
+                    .toggleStyle(.switch)
+
+                Button("Check for Updates") {
+                    UpdateChecker.checkNow()
+                }
+                .buttonStyle(.bordered)
+            }
+
             Spacer()
+
+            // Version
+            HStack {
+                Spacer()
+                Text("RamBar v\(UpdateChecker.localVersion)")
+                    .font(.system(size: 11))
+                    .foregroundColor(.secondary)
+                Spacer()
+            }
         }
         .padding(16)
         .frame(width: 300, height: 420)

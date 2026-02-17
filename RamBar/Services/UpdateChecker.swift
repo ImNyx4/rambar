@@ -13,13 +13,24 @@ final class UpdateChecker {
         }
     }
 
+    static var localVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0"
+    }
+
+    /// Called on launch — respects the auto-update preference.
     static func checkForUpdates() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            performCheck()
+            guard UserDefaults.standard.object(forKey: "autoUpdateEnabled") as? Bool ?? true else { return }
+            performCheck(manual: false)
         }
     }
 
-    private static func performCheck() {
+    /// Called manually from Settings — always runs regardless of preference.
+    static func checkNow() {
+        performCheck(manual: true)
+    }
+
+    private static func performCheck(manual isManualCheck: Bool) {
         guard let url = URL(string: "https://api.github.com/repos/ImNyx4/rambar/releases/latest") else { return }
 
         var request = URLRequest(url: url)
@@ -33,7 +44,12 @@ final class UpdateChecker {
             let remoteVersion = release.tag_name.trimmingCharacters(in: CharacterSet(charactersIn: "vV"))
             let localVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0"
 
-            guard isVersion(remoteVersion, newerThan: localVersion) else { return }
+            guard isVersion(remoteVersion, newerThan: localVersion) else {
+                if isManualCheck {
+                    DispatchQueue.main.async { showUpToDate() }
+                }
+                return
+            }
 
             guard let dmgAsset = release.assets.first(where: { $0.name.hasSuffix(".dmg") }),
                   let dmgURL = URL(string: dmgAsset.browser_download_url) else { return }
@@ -123,6 +139,14 @@ final class UpdateChecker {
 
         // Quit current app so the script can replace it
         NSApplication.shared.terminate(nil)
+    }
+
+    private static func showUpToDate() {
+        let alert = NSAlert()
+        alert.messageText = "You're Up to Date"
+        alert.informativeText = "RamBar v\(localVersion) is the latest version."
+        alert.alertStyle = .informational
+        alert.runModal()
     }
 
     private static func showError(_ message: String) {

@@ -168,6 +168,15 @@ class MemoryMonitor: ObservableObject {
     }
 
     private func groupHelperProcesses(_ processes: [ProcessMemory]) -> [ProcessMemory] {
+        // Build a lookup from app name → icon using NSWorkspace running apps
+        let appIcons: [String: NSImage] = Dictionary(
+            NSWorkspace.shared.runningApplications.compactMap { app -> (String, NSImage)? in
+                guard let name = app.localizedName, let icon = app.icon else { return nil }
+                return (name, icon)
+            },
+            uniquingKeysWith: { first, _ in first }
+        )
+
         var groups: [String: (memory: UInt64, icon: NSImage?, pid: pid_t)] = [:]
 
         for proc in processes {
@@ -178,15 +187,16 @@ class MemoryMonitor: ObservableObject {
 
             if var existing = groups[baseName] {
                 existing.memory += proc.memory
-                if existing.icon == nil { existing.icon = proc.icon }
                 groups[baseName] = existing
             } else {
                 groups[baseName] = (proc.memory, proc.icon, proc.id)
             }
         }
 
+        // Prefer proper app icons from NSWorkspace over generic file icons
         return groups.map { name, info in
-            ProcessMemory(id: info.pid, name: name, memory: info.memory, icon: info.icon)
+            let icon = appIcons[name] ?? info.icon
+            return ProcessMemory(id: info.pid, name: name, memory: info.memory, icon: icon)
         }
     }
 }
